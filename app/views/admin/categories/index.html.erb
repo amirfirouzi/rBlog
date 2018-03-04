@@ -1,0 +1,23 @@
+<h2 class="page-header .thead-dark">Manage Categories <%= link_to "Add New", new_admin_category_path, class:"btn btn-success pull-right" %></h2>
+<% if @categories.exists? %>
+  <table class="table">
+    <thead class="thead-dark">
+    <tr>
+      <th scope="col">Title</th>
+      <th scope="col">Create Date</th>
+      <th scope="col">Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @categories.each do |category|%>
+    <tr>
+      <td scope="row"><%= category.name %></td>
+      <td><%= category.created_at.to_time.strftime('%B %e at %l:%M %p')%></td>
+      <td><%= link_to "Edit", edit_admin_category_path(category), class:'btn btn-primary' %><%= link_to "Delete", admin_category_path(category), class:'btn btn-danger', method: :delete, data: {confirm: 'Are You Sure?'} %></td>
+    </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <p>There are no categories.</p>
+<% end %>

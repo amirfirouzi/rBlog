@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>RBlog</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'admin/application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'admin/application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="../index.html"><h1>rBlog<span>/Manager</span></h1></a>
+
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item <%= params[:controller] =='admin/posts' ? 'active' : '' %>">
+          <%= link_to "Posts", admin_posts_path, "class" => "nav-link"%>
+        </li>
+        <li class="nav-item <%= params[:controller] =='admin/categories' ? 'active' : '' %>">
+          <%= link_to "Categories",admin_categories_path, "class" => "nav-link"%>
+        </li>
+        <li class="nav-item <%= params[:controller] =='admin/users' ? 'active' : '' %>">
+          <%= link_to "Users", admin_users_path, "class" => "nav-link"%>
+        </li>
+      </ul>
+      <%= form_tag(admin_posts_path, :method => "get", id:"search-form", class:"search-form form-inline my-2 my-lg-0 pull-right") do %>
+        <div class="form-group">
+          <%= text_field_tag :search, params[:search], placeholder: "Search Posts", class:"form-control" %>
+        </div>
+        <%= submit_tag "Search", :name => nil, class:"btn btn-primary my-2 my-sm-0" %>
+      <% end %>
+    </div>
+  </nav>
+
+  <section>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <!--Alerts & Messages-->
+          <% if flash[:notice] %>
+            <div class="alert alert-success"><%= flash[:notice] %></div>
+          <% end %>
+
+          <% if flash[:alert] %>
+            <div class="alert alert-danger"><%= flash[:alert] %></div>
+          <% end %>
+          <div class="well">
+            <%= yield %>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>Copyright &copy; 2014, rBlog | <a href="login.html">Admin Login</a></p>
+  </footer>
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+  <script src="js/bootstrap.js"></script>
+
+  </body>
+</html>

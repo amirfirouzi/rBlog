@@ -1,0 +1,25 @@
+<h2 class="page-header .thead-dark">Manage Users <%= link_to "Add New", new_admin_user_path, class:"btn btn-success pull-right" %></h2>
+<% if @users.exists? %>
+  <table class="table">
+    <thead class="thead-dark">
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Create Date</th>
+      <th scope="col">Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @users.each do |user|%>
+      <tr>
+        <td scope="row"><%= user.name %></td>
+        <td scope="row"><%= user.email %></td>
+        <td><%= user.created_at.to_time.strftime('%B %e at %l:%M %p')%></td>
+        <td><%= link_to "Edit", edit_admin_user_path(user), class:'btn btn-primary' %><%= link_to "Delete", admin_user_path(user), class:'btn btn-danger', method: :delete, data: {confirm: 'Are You Sure?'} %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+<% else %>
+    <p>There are no users.</p>
+<% end %>

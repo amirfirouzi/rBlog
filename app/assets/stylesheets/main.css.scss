@@ -1,0 +1,168 @@
+body {
+  font-family: Arial, sans-serif;
+  background: $background-color;
+  line-height: 1.6rem;
+}
+
+.navbar{
+  overflow: auto;
+  min-height: 100px;
+  background: $primary-color;
+  font-size: 18px;
+  border: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+}
+
+.navbar h1{
+  margin: 10px 0 0 0;
+  padding: 0;
+}
+
+.navbar a{
+  color: #fff !important;
+}
+
+.navbar a:hover{
+  color: $primary-btn-color !important;
+}
+
+.navbar a:active{
+  color: $primary-btn-color !important;
+}
+.navbar-dark .navbar-nav .show > .nav-link, .navbar-dark .navbar-nav .active > .nav-link, .navbar-dark .navbar-nav .nav-link.show, .navbar-dark .navbar-nav .nav-link.active{
+  color: $primary-btn-color !important;
+}
+
+.navbar a.navbar-brand:hover{
+  color: #fff !important;
+}
+
+.search-form{
+  margin-top: 30px;
+}
+
+.search-form > .form-control{
+  height: 38px;
+  border-bottom-right-radius: 0px !important;
+  border-top-right-radius: 0px !important;
+}
+
+.search-form .btn{
+  height: 38px;
+  border-bottom-left-radius: 0px;
+  border-top-left-radius: 0px;
+}
+
+.container > .row {
+  padding-top: 3rem;
+}
+
+@media (min-width: 1200px){
+  .container {
+    max-width: 1280px;
+  }
+}
+
+.btn-primary{
+  background: $primary-btn-color !important;
+  border: 0px none;
+  color: #fff;
+}
+
+.btn-default{
+  color: #333 !important;
+  background-color: #eee !important;
+  border-color: #ccc !important;
+}
+
+.btn-default:hover {
+  color: #333;
+  background-color: #e6e6e6;
+  border-color: #adadad;
+}
+
+.btn{
+  margin: 0 2px 0 2px;
+}
+
+.search-form > .btn{
+  margin-left: 2px;
+  margin-right: 2px;
+  margin-left: -9px;
+}
+
+.search-form > .btn{
+  background: $primary-btn-color !important;
+  border-color: $primary-btn-color;
+  color: #fff;
+}
+
+.btn:hover {
+  background: $primary-color !important;
+  border-color: #fff;
+}
+
+.post{
+  background: #fff;
+  border: 1px #ccc solid;
+  margin-bottom: 30px;
+}
+
+.post-content{
+  padding: 25px;
+  box-sizing: border-box;
+}
+
+.post-content > p{
+  text-align: justify;
+}
+
+.post small{
+  color: #fff;
+  background: $secondary-color;
+  display: block;
+  margin-bottom: 10px;
+  padding-left: 5px;
+}
+
+.post img{
+  width: 100%;
+}
+
+.well{
+  background: #f8f9fa;
+  padding: 25px;
+}
+
+.table th, .table td{
+  vertical-align: middle;
+}
+
+.page-header{
+  margin-bottom: 20px;
+}
+
+footer{
+  color: #fff;
+  background: $primary-color;
+  text-align: center;
+  height: 60px;
+  padding-top: 20px;
+  margin-top: 30px;
+}
+
+form > .btn {
+  margin-top: 20px;
+  background: $primary-btn-color;
+  color: #fff;
+}
+
+.pull-right{
+  float: right;
+}
+
+.pull-left{
+  float: left;
+}
